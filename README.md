@@ -7,7 +7,7 @@ Django 1.11.8 <br>
 Django Rest Framework 3.7.3 <br>
 Django Rest Framework JWT 1.11.0 
 
-<b>Przydatne komendy (należy być w folderze, gdzie znajduje się plik manage.py)<b>
+<b>Przydatne komendy (należy być w folderze, gdzie znajduje się plik manage.py)</b>
 
 Uruchamianie serwera:
 ```
