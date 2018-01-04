@@ -32,3 +32,7 @@ python manage.py createsuperuser
 ```
 
 Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, jedynie trzeba pamiętać o zapisaniu pliku.
+
+
+<h1>Endpointy do rejestracji i logowania </h1>
+http://django-rest-auth.readthedocs.io/en/v0.9.2/api_endpoints.html
