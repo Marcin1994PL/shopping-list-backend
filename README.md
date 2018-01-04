@@ -5,7 +5,9 @@ A Python Rest API for Shopping List application
 Python 3.6.4 <br>
 Django 1.11.8 <br>
 Django Rest Framework 3.7.3 <br>
-Django Rest Framework JWT 1.11.0 
+Django Rest Framework JWT 1.11.0
+django-allauth 0.34
+django-rest-auth 0.9.2
 
 <b>Przydatne komendy (należy być w folderze, gdzie znajduje się plik manage.py)</b>
 
@@ -35,4 +37,5 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 
 <h1>Endpointy do rejestracji i logowania </h1>
+Narazie wyłączona jest weryfikacja mailowa.
 http://django-rest-auth.readthedocs.io/en/v0.9.2/api_endpoints.html
