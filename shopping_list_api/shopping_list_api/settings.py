@@ -40,7 +40,14 @@ INSTALLED_APPS = [
     'users',
     'groups',
     'lists',
-    'items'
+    'items',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'users.User'
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = None
