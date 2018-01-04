@@ -38,5 +38,6 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 <h1>Endpointy do rejestracji i logowania </h1>
 *Narazie wyłączona jest weryfikacja mailowa.<br>
+*Narazie brak resetu hasła.<br>
 *Django’s Token-based authentication w zwrotce<br>
 http://django-rest-auth.readthedocs.io/en/v0.9.2/api_endpoints.html
