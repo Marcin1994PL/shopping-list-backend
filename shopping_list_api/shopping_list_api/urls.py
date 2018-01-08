@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 urlpatterns = [
-    url(r'^rest-auth/', include('rest_auth.urls')),
-    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api/users/', include("users.api.urls", namespace="api-users")),
+    url(r'^api/groups/', include('groups.api.urls', namespace='api-groups')),
 ]
