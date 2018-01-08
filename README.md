@@ -36,11 +36,11 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 
 <h1>Endpointy do rejestracji i logowania </h1>
-POST na rejestracje
-<code>/api/users/</code>
-POST na logowanie
-<code>/api/users/login</code>
-POST na utworzenie nowej grupy
-<code>/api/groups/</code>
+POST na rejestracje <br>
+<code>/api/users/</code> <br>
+POST na logowanie <br>
+<code>/api/users/login</code> <br>
+POST na utworzenie nowej grupy <br>
+<code>/api/groups/</code> <br>
 <br>
 <h3>Przykładowe kolekcje dołączone w folderze "collections"</h3>
