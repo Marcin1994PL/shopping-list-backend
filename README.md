@@ -5,24 +5,25 @@ A Python Rest API for Shopping List application
 Python 3.6.4 <br>
 Django 1.11.8 <br>
 Django Rest Framework 3.7.3 <br>
-django-allauth 0.34<br>
-django-rest-auth 0.9.2<br>
 
 <b>Przydatne komendy (należy być w folderze, gdzie znajduje się plik manage.py)</b>
 
-Uruchamianie serwera:
-```
-python manage.py runserver
-```
 
-Po każdej zmianie modelu nalezy zrobić migracje. Pierwsze makemigrations tworzy także domyślne tabele w bazie, jak np. User:
+Na początku tworzymy bazę i tabalę:
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-Uruchamianie shella (można za jego pomocą przeglądać bazę):
+
+Uruchamianie serwera:
+```
+python manage.py runserver
+```
+
+
+Uruchamianie shella (można za jego pomocą przeglądać bazę, ale polecam /admin):
 ```
 python manage.py shell
 ```
