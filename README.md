@@ -41,12 +41,10 @@ POST na rejestracje <br>
 <code>/api/user/add</code> <br>
 POST na logowanie <br>
 <code>/api/user/login</code> <br>
-
 POST na edycje uzytkownika <br>
 <code>/api/user/edit</code> <br>
-
 GET na dane uzytkownika <br>
-<code>/api/user/get</code> <br>
+<code>/api/user/detail</code> <br>
 
 POST na utworzenie nowej grupy <br>
 <code>/api/groups/</code> <br>
