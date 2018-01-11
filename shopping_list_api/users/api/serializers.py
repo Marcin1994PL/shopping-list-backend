@@ -21,6 +21,10 @@ class UserCreateSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.is_staff = True
         user.is_active = True
+        if validated_data["first_name"] is not None:
+            user.first_name = validated_data["first_name"]
+        if validated_data["last_name"] is not None:
+            user.last_name = validated_data["last_name"]
         user.save()
         token = Token.objects.create(user=user)
         token.save()
@@ -99,3 +103,52 @@ class UserLoginSerializer(serializers.ModelSerializer):
         token, created = Token.objects.get_or_create(user=user_obj)
         data['token'] = token
         return data
+
+
+class UserDetailSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=150, allow_null=False, allow_blank=False)
+    email = serializers.CharField(allow_null=False, allow_blank=False)
+    first_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
+    last_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name')
+
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=150, allow_null=False, allow_blank=False, required=False)
+    email = serializers.CharField(allow_null=False, allow_blank=False, required=False)
+    first_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
+    last_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name')
+
+    def update(self, instance, validated_data):
+        user = instance
+        # if validated_data['username'] is not None:
+        #     user.username = validated_data["username"]
+        if "email" in validated_data:
+            user.email = validated_data["email"]
+        if "first_name" in validated_data:
+            user.first_name = validated_data["first_name"]
+        # if validated_data["last_name"] is not None:
+        #     user.last_name = validated_data["last_name"]
+        user.save()
+        return user
+
+    def validate_username(self, value):
+        qs = User.objects.filter(username__iexact=value)
+        if qs.exists():
+            raise serializers.ValidationError("This username has already by used")
+        else:
+            return value
+
+    def validate_email(self, value):
+        qs = User.objects.filter(email__iexact=value)
+        if qs.exists():
+            raise serializers.ValidationError("This email has already used.")
+        else:
+            return value

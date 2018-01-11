@@ -1,65 +1,13 @@
 {
 	"info": {
 		"name": "ShoppingList",
-		"_postman_id": "248e481b-cd93-acf7-61a6-64c7876678d6",
+		"_postman_id": "55e8a0a6-8d1c-301a-1588-4a718152005b",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Registration",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "username",
-							"value": "test3",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "MiKe@1994",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "password2",
-							"value": "dupa12345678",
-							"description": "",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "email",
-							"value": "mi.kalujjzinski@gmail.com",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/users/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users",
-						""
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
+			"name": "UserAdd",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -69,19 +17,22 @@
 						{
 							"key": "username",
 							"value": "test4",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "dupa1234",
-							"description": "",
+							"value": "test4",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mi.kalujjzinskig@gmail.com",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/users/login/",
+					"raw": "http://localhost:8000/api/user/add/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,12 +40,47 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"users",
-						"login",
+						"user",
+						"add",
 						""
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "test3",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "MiKe@1994",
+							"type": "text"
+						}
+					]
 				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -114,7 +100,6 @@
 						{
 							"key": "name",
 							"value": "TestGroup",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -130,6 +115,77 @@
 						"api",
 						"groups",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c6189a7b69175da865414e1f4d3af4657beb55c2"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8000/api/user/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"detail"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UserEdit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c6189a7b69175da865414e1f4d3af4657beb55c2"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Belzebubf",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "xD@google.pl",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"edit"
 					]
 				},
 				"description": ""
