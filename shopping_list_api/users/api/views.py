@@ -5,6 +5,7 @@ from rest_framework import generics, views, status
 
 class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserCreateSerializer
+    permission_classes = []
 
 
 class UserLoginAPIView(views.APIView):
@@ -13,6 +14,7 @@ class UserLoginAPIView(views.APIView):
     """
 
     serializer_class = UserLoginSerializer
+    permission_classes = []
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
