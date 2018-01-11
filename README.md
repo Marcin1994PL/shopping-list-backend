@@ -38,9 +38,16 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 <h1>Endpointy do rejestracji i logowania </h1>
 POST na rejestracje <br>
-<code>/api/users/</code> <br>
+<code>/api/user/add</code> <br>
 POST na logowanie <br>
-<code>/api/users/login</code> <br>
+<code>/api/user/login</code> <br>
+
+POST na edycje uzytkownika <br>
+<code>/api/user/edit</code> <br>
+
+GET na dane uzytkownika <br>
+<code>/api/user/get</code> <br>
+
 POST na utworzenie nowej grupy <br>
 <code>/api/groups/</code> <br>
 <br>
