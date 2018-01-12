@@ -37,6 +37,10 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 <h1>Endpointy do rejestracji i logowania </h1>
 <br>
 
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#TODO` <br>
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#DONE` <br>
+![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#IN PROGRESS` <br>
+
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 POST na rejestracje   <br>
 <ul>
