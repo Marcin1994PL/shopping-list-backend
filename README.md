@@ -38,7 +38,7 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 <br>
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-POST na rejestracje   <br><
+POST na rejestracje   <br>
 <ul>
   <li>User</li>
 </ul>
