@@ -35,107 +35,111 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 
 <h1>Endpointy do rejestracji i logowania </h1>
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#DONE` <br>
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#TODO` <br>
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#IN PROGRESS` <br>
+<br><br>
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-POST na rejestracje  <b> DONE </b> <br><br>
+POST na rejestracje   <br><br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/add</code> <br>
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-POST na logowanie  <b> DONE </b> <br><br>
+POST na logowanie   <br><br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/login</code> <br><br>
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-PUT na edycje uzytkownika <b> DONE </b> <br>
+PUT na edycje uzytkownika  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/edit</code> <br><br>
 
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-GET na dane uzytkownika <b> DONE </b> <br>
+GET na dane uzytkownika  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/detail</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na grupy użytkownika <b>TODO</b> <br>
+GET na grupy użytkownika  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-DELETE na usunięcie się z grupy <b>TODO</b> <br>
+DELETE na usunięcie się z grupy  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/{idGroup}</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na listy użytkownika <b>TODO</b> <br>
+GET na listy użytkownika  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/lists</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-POST na utworzenie nowej grupy <b>TODO</b> <br>
+POST na utworzenie nowej grupy  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na listę dostępnych grup <b>TODO</b> <br>
+GET na listę dostępnych grup  <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-POST na dodanie się do grupy <b>TODO</b><br>
+POST na dodanie się do grupy <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/join</code><br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na czlonkow grupy <b>TODO</b><br>
+GET na czlonkow grupy <br>
 <ul>
   <li>Members</li>
 </ul>
 <code>/api/groups/members</code><br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-DELETE usunięcie członka grupy <b>TODO</b><br>
+DELETE usunięcie członka grupy <br>
 <ul>
   <li>Group Owner</li>
 </ul>
 <code>/api/groups/members/{idUser}</code><br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-POST na dodanie nowej listy w ramach grupy <b>TODO</b><br>
+POST na dodanie nowej listy w ramach grupy <br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/</code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na listę ![#f03c15] <b>TODO</b> <br>
+GET na listę <br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br><br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-DELETE na listę <b>TODO</b> <br>
+DELETE na listę  <br>
 <ul>
   <li>List Owner</li>
   <li>Group Owner</li>
@@ -143,14 +147,14 @@ DELETE na listę <b>TODO</b> <br>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br> <br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-POST na dodanie nowego itemu do listy <b>TODO</b><br>
+POST na dodanie nowego itemu do listy <br>
 <ul>
   <li>List Owner</li>
 </ul>
-<code>/api/groups/{idGroup}/lists/{idList}/items/ <br> <br>
+<code>/api/groups/{idGroup}/lists/{idList}/items/</code> <br> <br>
   
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-PUT na edycje itemu w liście <b>TODO</b> <br>
+PUT na edycje itemu w liście  <br>
 <ul>
   <li>List Owner - wszystko, pod warunkiem, że item !isBought</li> 
   <li>Member - change from isBought = False to isBought = True</li> 
@@ -158,7 +162,7 @@ PUT na edycje itemu w liście <b>TODO</b> <br>
 <code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-DELETE na usunięcie itemu z listy <b>TODO</b> <br>
+DELETE na usunięcie itemu z listy <br>
 <ul>
   <li>List Owner - pod warunkiem, że item !isBought</li> 
 </ul>
