@@ -42,8 +42,8 @@ POST na rejestracje   <br>
 <ul>
   <li>User</li>
 </ul>
-<code>/api/user/add</code> <br>
-
+<code>/api/user/add</code> <br><br>
+- - - - <br>
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 POST na logowanie   <br>
 <ul>
