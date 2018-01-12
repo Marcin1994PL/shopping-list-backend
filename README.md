@@ -60,87 +60,87 @@ GET na dane uzytkownika <b> DONE </b> <br>
 </ul>
 <code>/api/user/detail</code> <br>
 
-GET na grupy użytkownika <font color="red">TODP</font> <br>
+GET na grupy użytkownika <b>TODO</b> <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/</code> <br>
 
-DELETE na usunięcie się z grupy <font color="red">TODP</font> <br>
+DELETE na usunięcie się z grupy <b>TODO</b> <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/{idGroup}</code> <br>
 
-GET na listy użytkownika <font color="red">TODP</font> <br>
+GET na listy użytkownika <b>TODO</b> <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/lists</code> <br>
 
-POST na utworzenie nowej grupy <font color="red">TODP</font> <br>
+POST na utworzenie nowej grupy <b>TODO</b> <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br>
 
-GET na listę dostępnych grup <font color="red">TODP</font> <br>
+GET na listę dostępnych grup <b>TODO</b> <br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br>
 
-POST na dodanie się do grupy <font color="red">TODP</font><br>
+POST na dodanie się do grupy <b>TODO</b><br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/join</code><br>
 
-GET na czlonkow grupy <font color="red">TODP</font><br>
+GET na czlonkow grupy <b>TODO</b><br>
 <ul>
   <li>Members</li>
 </ul>
 <code>/api/groups/members</code><br>
 
-DELETE usunięcie członka grupy <font color="red">TODP</font><br>
+DELETE usunięcie członka grupy <b>TODO</b><br>
 <ul>
   <li>Group Owner</li>
 </ul>
 <code>/api/groups/members/{idUser}</code><br>
 
-POST na dodanie nowej listy w ramach grupy <font color="red">TODP</font><br>
+POST na dodanie nowej listy w ramach grupy <b>TODO</b><br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/</code> <br>
 
-GET na listę <font color="red">TODP</font> <br>
+GET na listę <b>TODO</b> <br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br>
 
-DELETE na listę <font color="red">TODP</font> <br>
+DELETE na listę <b>TODO</b> <br>
 <ul>
   <li>List Owner</li>
   <li>Group Owner</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br>
 
-POST na dodanie nowego itemu do listy <font color="red">TODP</font><br>
+POST na dodanie nowego itemu do listy <b>TODO</b><br>
 <ul>
   <li>List Owner</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/ <br>
   
-PUT na edycje itemu w liście <font color="red">TODP</font> <br>
+PUT na edycje itemu w liście <b>TODO</b> <br>
 <ul>
   <li>List Owner - wszystko, pod warunkiem, że item !isBought</li> 
   <li>Member - change from isBought = False to isBought = True</li> 
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br>
 
-DELETE na usunięcie itemu z listy <font color="red">TODP</font> <br>
+DELETE na usunięcie itemu z listy <b>TODO</b> <br>
 <ul>
   <li>List Owner - pod warunkiem, że item !isBought</li> 
 </ul>
