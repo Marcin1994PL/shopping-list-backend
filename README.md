@@ -35,10 +35,8 @@ Jak się zmieni kod, a ma się uruchomiony serwer, nie trzeba go restartować, j
 
 
 <h1>Endpointy do rejestracji i logowania </h1>
-![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#DONE` <br>
-![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#TODO` <br>
-![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#IN PROGRESS` <br>
-<br><br>
+<br>
+
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 POST na rejestracje   <br><br>
 <ul>
@@ -166,6 +164,6 @@ DELETE na usunięcie itemu z listy <br>
   <li>List Owner - pod warunkiem, że item !isBought</li> 
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br>
-***
+
 <br>
 <h3>Przykładowe kolekcje dołączone w folderze "collections"</h3>
