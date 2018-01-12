@@ -160,7 +160,7 @@ PUT na edycje itemu w liście  <br>
   <li>List Owner - wszystko, pod warunkiem, że item !isBought</li> 
   <li>Member - change from isBought = False to isBought = True</li> 
 </ul>
-<code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br>
+<code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br> <br>
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 DELETE na usunięcie itemu z listy <br>
