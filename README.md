@@ -99,7 +99,7 @@ GET na listę dostępnych grup  <br>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br><br>
-***
+
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 POST na dodanie się do grupy <br>
 <ul>
