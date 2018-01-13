@@ -1,14 +1,16 @@
 from rest_framework import serializers
 from groups.models import ShoppingGroup
+from users.api.serializers import UserDetailSerializer
 
 
-class ShoppingGroupCreateSerializer(serializers.ModelSerializer):
+class ShoppingGroupCreateSerializer(serializers.HyperlinkedModelSerializer):
     name = serializers.CharField(max_length=100)
     password = serializers.CharField(max_length=10, allow_null=False, allow_blank=False, write_only=True)
+    owner = UserDetailSerializer(read_only=True)
 
     class Meta:
         model = ShoppingGroup
-        fields = ('name', 'password')
+        fields = ('name', 'password', 'owner')
 
     def create(self, validated_data):
         user = self.context['request'].user
@@ -23,4 +25,6 @@ class ShoppingGroupCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Group with this name exists!")
         else:
             return value
+
+
 
