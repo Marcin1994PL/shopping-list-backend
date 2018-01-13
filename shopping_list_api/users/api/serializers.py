@@ -19,7 +19,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User(email=validated_data['email'], username=validated_data['username'])
         user.set_password(validated_data['password'])
-        user.is_staff = True
+        user.is_staff = False
         user.is_active = True
         # if validated_data["first_name"] is not None:
         #     user.first_name = validated_data["first_name"]
