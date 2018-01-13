@@ -69,22 +69,22 @@ GET na dane uzytkownika  <br>
 </ul>
 <code>/api/user/detail</code> <br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na grupy użytkownika  <br>
+![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
+GET na grupy użytkownika  - robi Marcin O<br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/</code> <br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-DELETE na usunięcie się z grupy  <br>
+![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
+DELETE na usunięcie się z grupy - robi Marcin O<br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/user/groups/{idGroup}</code> <br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
-GET na listy użytkownika  <br>
+![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
+GET na listy użytkownika - robi Marcin O<br>
 <ul>
   <li>User</li>
 </ul>
