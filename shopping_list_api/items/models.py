@@ -6,5 +6,5 @@ from lists.models import ShoppingList
 class Item(models.Model):
     list = models.ForeignKey(ShoppingList)
     name = models.CharField(max_length=100, null=False, blank=False)
-    quantity = models.IntegerField()
-    is_bought = models.BooleanField()
+    quantity = models.IntegerField(null=False, blank=False)
+    is_bought = models.BooleanField(default=False)
