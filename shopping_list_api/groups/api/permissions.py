@@ -3,16 +3,18 @@ from groups.models import ShoppingGroup
 
 OWNER_METHODS = ['POST', 'PUT', 'PATCH']
 
-class IsGroupMember(permissions.BasePermission):
+class OnlyGroupMemberCanSeeMembers(permissions.BasePermission):
 
     def has_permission(self, request, view):
 
-        shopping_group = ShoppingGroup.objects.filter(pk=self.kwargs['pk'], members__pk=self.context['request'].user.pk)
-
-        if shopping_group is not None:
+        if request.method == "POST":
+            return True
+        shopping_group = ShoppingGroup.objects.filter(pk=request.resolver_match.kwargs.get('pk'), members__pk=request.user.pk)
+        if shopping_group.exists():
             return True
         else:
             return False
+
 
 class OnlyOwnerCanUpdate(permissions.BasePermission):
 

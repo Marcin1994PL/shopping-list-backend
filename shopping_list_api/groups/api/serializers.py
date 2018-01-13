@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from groups.models import ShoppingGroup
 from users.api.serializers import UserDetailSerializer
+from django.contrib.auth.models import User
 
 
 class ShoppingGroupCreateSerializer(serializers.HyperlinkedModelSerializer):
@@ -54,3 +55,37 @@ class ShoppingGroupUpdateDetailSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("This name has used.")
         else:
             return value
+
+
+class ShoppingGroupMembersCreateListSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(max_length=10, allow_null=False, allow_blank=False, write_only=True)
+    members = UserDetailSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = ShoppingGroup
+        fields = ('password', 'members')
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        shopping_group = ShoppingGroup.objects.get(pk=self.context['group_id'])
+        shopping_group.members.add(user)
+        shopping_group.save()
+        return shopping_group
+
+    def validate_password(self, value):
+        shopping_group = ShoppingGroup.objects.get(pk=self.context['group_id'])
+        if shopping_group.password != value:
+            raise serializers.ValidationError("Wrong password!")
+        else:
+            return value
+
+
+class ShoppingGroupMembersDetailDeleteSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=150, allow_null=False, allow_blank=False)
+    email = serializers.CharField(allow_null=False, allow_blank=False)
+    first_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False)
+    last_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name')
