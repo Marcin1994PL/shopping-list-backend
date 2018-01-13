@@ -1,7 +1,8 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.response import Response
 
 from groups.models import ShoppingGroup
-from lists.api.serializers import ShoppingListCreateSerializer
+from lists.api.serializers import ShoppingListCreateSerializer, ShoppingListRetrieveUpdateSerializer
 from lists.models import ShoppingList
 
 
@@ -9,8 +10,8 @@ class ListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = ShoppingListCreateSerializer
 
     def get_group(self):
-        groupId = self.kwargs['groupId']
-        return ShoppingGroup.objects.get(pk=groupId)
+        group_id = self.kwargs['groupId']
+        return ShoppingGroup.objects.get(pk=group_id)
 
     def get_queryset(self):
         group = self.get_group()
@@ -18,4 +19,11 @@ class ListCreateAPIView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         group = self.get_group()
-        serializer.save(group=group)
+        owner = self.request.user
+        serializer.save(group=group, owner=owner)
+
+
+class ListDetailsUpdateDeleteAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ShoppingList.objects.all()
+    lookup_field = 'pk'
+    serializer_class = ShoppingListRetrieveUpdateSerializer
