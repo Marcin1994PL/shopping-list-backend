@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework import generics, views, status
 from django.contrib.auth.models import User
 
-
 class UserCreateAPIView(generics.CreateAPIView):
     serializer_class = UserCreateSerializer
     permission_classes = []
@@ -31,6 +30,7 @@ class UserDetailAPIView(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()  # here the object is retrieved
         serializer = self.get_serializer(instance)
+
         return Response(serializer.data)
 
     def get_object(self):
@@ -43,3 +43,4 @@ class UserUpdateAPIView(generics.UpdateAPIView):
 
     def get_object(self):
         return self.request.user
+

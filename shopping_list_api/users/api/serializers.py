@@ -14,17 +14,17 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'password', 'email', 'first_name', 'last_name')
+        fields = ('username', 'password', 'email', 'first_name', 'last_name', 'is_staff')
 
     def create(self, validated_data):
         user = User(email=validated_data['email'], username=validated_data['username'])
         user.set_password(validated_data['password'])
         user.is_staff = True
         user.is_active = True
-        if validated_data["first_name"] is not None:
-            user.first_name = validated_data["first_name"]
-        if validated_data["last_name"] is not None:
-            user.last_name = validated_data["last_name"]
+        # if validated_data["first_name"] is not None:
+        #     user.first_name = validated_data["first_name"]
+        # if validated_data["last_name"] is not None:
+        #     user.last_name = validated_data["last_name"]
         user.save()
         token = Token.objects.create(user=user)
         token.save()
@@ -108,8 +108,8 @@ class UserLoginSerializer(serializers.ModelSerializer):
 class UserDetailSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=150, allow_null=False, allow_blank=False)
     email = serializers.CharField(allow_null=False, allow_blank=False)
-    first_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
-    last_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False, required=False)
+    first_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False)
+    last_name = serializers.CharField(max_length=30, allow_null=False, allow_blank=False)
 
     class Meta:
         model = User
