@@ -97,29 +97,29 @@ POST na utworzenie nowej grupy - robi Michał K <br>
 </ul>
 <code>/api/groups/</code> <br><br>
 
-![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
-GET na listę dostępnych grup - robi Michał K<br>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+GET na listę dostępnych grup<br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/</code> <br><br>
 
-![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
-POST na dodanie się do grupy - robi Michał K<br>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+POST na dodanie się do grupy<br>
 <ul>
   <li>User</li>
 </ul>
 <code>/api/groups/join</code><br><br>
 
-![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
-GET na czlonkow grupy robi Michał K<br>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+GET na czlonkow grupy<br>
 <ul>
   <li>Members</li>
 </ul>
 <code>/api/groups/members</code><br><br>
 
-![#1589F0](https://placehold.it/15/1589F0/000000?text=+)
-DELETE usunięcie członka grupy  - robi Michał K<br>
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+DELETE usunięcie członka grupy<br>
 <ul>
   <li>Group Owner</li>
 </ul>
