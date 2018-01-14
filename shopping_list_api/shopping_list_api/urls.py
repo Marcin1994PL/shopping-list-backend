@@ -18,5 +18,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/user/', include("users.api.urls", namespace="api-users")),
-    url(r'^api/groups/', include('groups.api.urls', namespace='api-groups'))
+    url(r'^api/groups/', include('groups.api.urls', namespace='api-groups')),
+    url(r'^api/products/', include('product_search.api.urls', namespace='api-products'))
 ]
