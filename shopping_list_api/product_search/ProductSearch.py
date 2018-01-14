@@ -34,7 +34,7 @@ class ProductSearch:
             response = conn.getresponse()
             data = response.read()
             conn.close()
-            return json.loads(data)
+            return json.loads(data)['uk']['ghs']['products']['results']
         except Exception as e:
             print("Tesco API Error {0}".format(e))
             return None
