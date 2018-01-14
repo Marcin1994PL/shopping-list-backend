@@ -16,11 +16,12 @@ class OnlyGroupMemberCanSeeMembers(permissions.BasePermission):
             return False
 
 
-class OnlyOwnerCanUpdate(permissions.BasePermission):
+class OnlyOwnerCanUpdateGroup(permissions.BasePermission):
 
     def has_permission(self, request, view):
         pk = request.resolver_match.kwargs.get('pk')
         shopping_group = ShoppingGroup.objects.get(pk=pk)
+        is_owner = False
         if shopping_group.owner.pk == request.user.pk:
             is_owner = True
 
@@ -30,4 +31,21 @@ class OnlyOwnerCanUpdate(permissions.BasePermission):
             return True
 
 
+class AllMembersCanSeeOwnerCanDelete(permissions.BasePermission):
+    def has_permission(self, request, view):
 
+        if request.method == "GET":
+            shopping_group = ShoppingGroup.objects.filter(pk=request.resolver_match.kwargs.get('pk'),
+                                                          members__pk=request.user.pk)
+            if shopping_group.exists():
+                return True
+            else:
+                return False
+
+        pk = request.resolver_match.kwargs.get('pk')
+        shopping_group = ShoppingGroup.objects.get(pk=pk)
+        is_owner = False
+        if shopping_group.owner.pk == request.user.pk:
+            is_owner = True
+
+        return is_owner

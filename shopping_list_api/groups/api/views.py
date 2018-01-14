@@ -5,8 +5,7 @@ from .serializers import (ShoppingGroupCreateSerializer, ShoppingGroupUpdateDeta
 from groups.models import ShoppingGroup
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from .permissions import OnlyOwnerCanUpdate, OnlyGroupMemberCanSeeMembers
-from django.contrib.auth.models import User
+from .permissions import (OnlyOwnerCanUpdateGroup, OnlyGroupMemberCanSeeMembers, AllMembersCanSeeOwnerCanDelete)
 from django.shortcuts import get_object_or_404
 
 
@@ -29,7 +28,7 @@ class ShoppingGroupDetailUpdateAPIView(generics.RetrieveUpdateAPIView):
     lookup_field = 'pk'
     queryset = ShoppingGroup.objects.all()
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated, OnlyOwnerCanUpdate)
+    permission_classes = (IsAuthenticated, OnlyOwnerCanUpdateGroup)
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()  # here the object is retrieved
@@ -56,7 +55,8 @@ class ShoppingGroupMembersCreateListAPIView(generics.ListCreateAPIView):
 
 class ShoppingGroupMembersDetailDeleteApiView(generics.RetrieveDestroyAPIView):
     serializer_class = ShoppingGroupMembersDetailDeleteSerializer
-    permission_classes = (OnlyOwnerCanUpdate, IsAuthenticated)
+    permission_classes = (AllMembersCanSeeOwnerCanDelete, IsAuthenticated)
+
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()  # here the object is retrieved
         if instance is None:
