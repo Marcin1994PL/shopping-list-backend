@@ -1,10 +1,12 @@
 from rest_framework import viewsets, status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from product_search.ProductSearch import ProductSearch
 
 
 class ProductSearchViewSet(viewsets.ViewSet):
+    permission_classes = (IsAuthenticated,)
 
     def search_by_barcode(self, request, barcode):
         product_search = ProductSearch()

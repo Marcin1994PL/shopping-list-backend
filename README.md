@@ -169,5 +169,19 @@ DELETE na usunięcie itemu z listy <br>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br>
 
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+GET na szukanie produktu w tesco po kodzie kreskowym <br>
+<ul>
+  <li>User</li>
+</ul>
+<code>/api/products/barcode/{code} </code> <br>
+
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+GET na szukanie produktu w tesco po nazwie <br>
+<ul>
+  <li>User</li>
+</ul>
+<code>/api/products/name/{name} </code> <br>
+
 <br>
 <h3>Przykładowe kolekcje dołączone w folderze "collections"</h3>
