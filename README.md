@@ -125,21 +125,21 @@ DELETE usunięcie członka grupy  - robi Michał K<br>
 </ul>
 <code>/api/groups/members/{idUser}</code><br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 POST na dodanie nowej listy w ramach grupy <br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/</code> <br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 GET na listę <br>
 <ul>
   <li>Member</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br><br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 DELETE na listę  <br>
 <ul>
   <li>List Owner</li>
@@ -147,14 +147,14 @@ DELETE na listę  <br>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/ </code> <br> <br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 POST na dodanie nowego itemu do listy <br>
 <ul>
   <li>List Owner</li>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/</code> <br> <br>
  
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 PUT na edycje itemu w liście  <br>
 <ul>
   <li>List Owner - wszystko, pod warunkiem, że item !isBought</li> 
@@ -162,7 +162,7 @@ PUT na edycje itemu w liście  <br>
 </ul>
 <code>/api/groups/{idGroup}/lists/{idList}/items/{idItem} </code> <br> <br>
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 DELETE na usunięcie itemu z listy <br>
 <ul>
   <li>List Owner - pod warunkiem, że item !isBought</li> 
