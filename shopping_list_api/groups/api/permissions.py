@@ -3,22 +3,25 @@ from groups.models import ShoppingGroup
 
 OWNER_METHODS = ['POST', 'PUT', 'PATCH']
 
-class IsGroupMember(permissions.BasePermission):
+class OnlyGroupMemberCanSeeMembers(permissions.BasePermission):
 
     def has_permission(self, request, view):
 
-        shopping_group = ShoppingGroup.objects.filter(pk=self.kwargs['pk'], members__pk=self.context['request'].user.pk)
-
-        if shopping_group is not None:
+        if request.method == "POST":
+            return True
+        shopping_group = ShoppingGroup.objects.filter(pk=request.resolver_match.kwargs.get('pk'), members__pk=request.user.pk)
+        if shopping_group.exists():
             return True
         else:
             return False
 
-class OnlyOwnerCanUpdate(permissions.BasePermission):
+
+class OnlyOwnerCanUpdateGroup(permissions.BasePermission):
 
     def has_permission(self, request, view):
         pk = request.resolver_match.kwargs.get('pk')
         shopping_group = ShoppingGroup.objects.get(pk=pk)
+        is_owner = False
         if shopping_group.owner.pk == request.user.pk:
             is_owner = True
 
@@ -28,4 +31,21 @@ class OnlyOwnerCanUpdate(permissions.BasePermission):
             return True
 
 
+class AllMembersCanSeeOwnerCanDelete(permissions.BasePermission):
+    def has_permission(self, request, view):
 
+        if request.method == "GET":
+            shopping_group = ShoppingGroup.objects.filter(pk=request.resolver_match.kwargs.get('pk'),
+                                                          members__pk=request.user.pk)
+            if shopping_group.exists():
+                return True
+            else:
+                return False
+
+        pk = request.resolver_match.kwargs.get('pk')
+        shopping_group = ShoppingGroup.objects.get(pk=pk)
+        is_owner = False
+        if shopping_group.owner.pk == request.user.pk:
+            is_owner = True
+
+        return is_owner
